@@ -69,6 +69,8 @@ if (process.env.CI) {
   [email, pass, recovery] = fs.readFileSync(path.join(__dirname, 'config.ini')).toString().split(/\r?\n/).map(e => e.trim())
 }
 
+console.log('len of em ',email.length,'len of pa',pass.length,'len of rec ',recovery.length)
+
 const apiLink = 'https://cdn.jsdelivr.net/gh/fawazahmed0/quran-api@1'
 const editionsLink = apiLink + '/editions'
 
