@@ -466,7 +466,7 @@ async function securityBypass (localPage) {
   try{
   await localPage.waitForXPath(selectBtnXPath)
   }catch(error){
-     const pageSource = await page.evaluate(() => document.documentElement.outerHTML)
+     const pageSource = await localPage.evaluate(() => document.documentElement.outerHTML)
      console.log(pageSource)
   }
 }
