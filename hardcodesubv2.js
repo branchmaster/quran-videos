@@ -463,7 +463,12 @@ async function securityBypass (localPage) {
     waitUntil: 'networkidle0'
   })
   const selectBtnXPath = '//*[normalize-space(text())=\'Select files\']'
+  try{
   await localPage.waitForXPath(selectBtnXPath)
+  }catch(error){
+     const pageSource = await page.evaluate(() => document.documentElement.outerHTML)
+     console.log(pageSource)
+  }
 }
 // Generates the video and then uploads it and then uploads it's subtitles
 async function genUploadWithSub (editionLang, chap, editionName) {
