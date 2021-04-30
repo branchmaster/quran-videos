@@ -530,7 +530,7 @@ async function uploadVideo (pathToFile, lang, chapter, editionName) {
   }
   const learnmore = await page.$x(`//*[normalize-space(translate(text(),"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"))='learn more']`)
   for(let val of learnmore){
-      try{val.click()}catch(error){}
+      try{await val.click()}catch(error){}
   }
   // Remove hidden closebtn text
   const closeBtn = await page.$x(closeBtnXPath)
