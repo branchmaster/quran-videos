@@ -528,6 +528,8 @@ async function uploadVideo (pathToFile, lang, chapter, editionName) {
       await page.goto(uploadURL)
     }
   }
+  await page.click(`//*[normalize-space(translate(text(),"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz"))='learn more']`)
+  
   // Remove hidden closebtn text
   const closeBtn = await page.$x(closeBtnXPath)
   await page.bringToFront()
