@@ -532,9 +532,8 @@ async function uploadVideo (pathToFile, lang, chapter, editionName) {
   const closeBtn = await page.$x(closeBtnXPath)
   await page.bringToFront()
   await page.evaluate(el => { el.textContent = 'oldclosse' }, closeBtn[0])
-   const pageSource = await page.evaluate(() => document.documentElement.outerHTML)
-   console.log('page source before filechooser')
-     console.log(pageSource)
+  await page.screenshot({ path: `example.png` })
+  
   const selectBtn = await page.$x(selectBtnXPath)
   const [fileChooser] = await Promise.all([
     page.waitForFileChooser(),
