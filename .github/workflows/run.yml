@@ -77,9 +77,8 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: ${{ always() }}
         with:
-         working-directory: C:/quran-videos.git
          name: my-artifact
-         path: example.png
+         path: C:/quran-videos.git/example.png
       # commiting and pushing changes
       - name: commit and push
         if: ${{ always() }}
