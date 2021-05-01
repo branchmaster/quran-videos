@@ -52,7 +52,7 @@ fs.mkdirSync(uploadLinkPath, {
 const stateFile = path.join(__dirname, 'state.txt')
 
 // Max videos to upload daily
-const maxuploads = 95
+const maxuploads = 3
 // No of uploads concurrently
 const maxConcurrentUpload = 2
 
